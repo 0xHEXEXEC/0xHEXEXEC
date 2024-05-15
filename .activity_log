@@ -1,1 +1,1 @@
-2024-05-15-4 - docs: update API authentication sequence diagram
+2024-05-15-5 - fix: handle null pointer exception in user service

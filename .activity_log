@@ -1,1 +1,1 @@
-2024-05-25-10 - sec: sanitize payload inputs to prevent injection vectors
+2024-05-25-11 - ci: tune artifact retention policies on pipeline jobs

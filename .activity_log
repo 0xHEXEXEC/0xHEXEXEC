@@ -1,1 +1,1 @@
-2024-06-02 11:40:17 +0700 - docs: update developer biography info
+2024-06-02 10:28:36 +0700 - fix: resolve memory leak in background worker

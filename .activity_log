@@ -1,1 +1,1 @@
-2024-06-04 17:19:21 +0700 - fix: resolve memory leak in background worker
+2024-06-04 11:25:13 +0700 - sec: patch potential cross-site scripting vulnerability

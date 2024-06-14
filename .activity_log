@@ -1,1 +1,1 @@
-2024-06-14 12:12:38 +0700 - docs: refine project description lists
+2024-06-14 10:34:29 +0700 - fix: resolve memory leak in background worker

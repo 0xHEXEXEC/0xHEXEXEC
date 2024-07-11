@@ -1,1 +1,1 @@
-2024-07-11-23 - ci: tune artifact retention policies on pipeline jobs
+2024-07-11-24 - fix: handle null pointer exception in user service

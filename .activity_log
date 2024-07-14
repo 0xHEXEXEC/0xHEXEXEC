@@ -1,1 +1,1 @@
-2024-07-14 17:48:27 +0700 - style: fix padding on custom HTML tables
+2024-07-14 16:30:58 +0700 - fix: resolve memory leak in background worker

@@ -1,1 +1,1 @@
-2024-07-27-6 - sec: sanitize payload inputs to prevent injection vectors
+2024-07-27-7 - sec: sanitize payload inputs to prevent injection vectors

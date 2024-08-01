@@ -1,1 +1,1 @@
-2024-08-01-8 - docs: update API authentication sequence diagram
+2024-08-01-9 - sec: sanitize payload inputs to prevent injection vectors

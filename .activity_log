@@ -1,1 +1,1 @@
-2024-09-04 13:16:49 +0700 - fix: resolve memory leak in background worker
+2024-09-04 14:23:43 +0700 - fix: resolve memory leak in background worker

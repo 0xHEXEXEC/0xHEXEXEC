@@ -1,1 +1,1 @@
-2024-09-07-12 - test: add integration test cases for push endpoint
+2024-09-08-1 - perf: optimize memory footprint on batch serialization

@@ -1,1 +1,1 @@
-2024-09-10-5 - feat: add oauth2 provider integration
+2024-09-10-6 - fix: resolve race condition in token refresh worker

@@ -1,1 +1,1 @@
-2024-09-11-6 - feat: add oauth2 provider integration
+2024-09-14-1 - refactor: decouple caching layer from state manager

@@ -1,1 +1,1 @@
-2024-09-14-6 - feat: add oauth2 provider integration
+2024-09-14-7 - sec: sanitize payload inputs to prevent injection vectors

@@ -1,1 +1,1 @@
-2024-09-21-10 - feat: implement responsive grid breakpoints for dashboard
+2024-09-21-11 - refactor: decouple caching layer from state manager

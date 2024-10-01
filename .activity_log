@@ -1,1 +1,1 @@
-2024-10-01-2 - fix: resolve race condition in token refresh worker
+2024-10-01-3 - chore: update upstream dependency lockfile definitions

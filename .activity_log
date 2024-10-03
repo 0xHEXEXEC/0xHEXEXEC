@@ -1,1 +1,1 @@
-2024-10-04 16:16:33 +0700 - style: adjust dark mode contrast elements
+2024-10-03 09:18:02 +0700 - fix: resolve memory leak in background worker

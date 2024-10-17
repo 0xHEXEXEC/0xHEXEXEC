@@ -1,1 +1,1 @@
-2024-10-17-1 - feat: add oauth2 provider integration
+2024-10-17-2 - fix: handle null pointer exception in user service

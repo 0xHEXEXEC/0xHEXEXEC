@@ -1,1 +1,1 @@
-2024-10-29-6 - ci: tune artifact retention policies on pipeline jobs
+2024-10-29-7 - fix: resolve race condition in token refresh worker

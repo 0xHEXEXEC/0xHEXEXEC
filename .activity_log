@@ -1,1 +1,1 @@
-2024-11-30-7 - sec: sanitize payload inputs to prevent injection vectors
+2024-12-01-1 - refactor: decouple caching layer from state manager

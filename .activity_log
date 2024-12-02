@@ -1,1 +1,1 @@
-2024-12-03 15:08:35 +0700 - fix: resolve memory leak in background worker
+2024-12-02 14:24:48 +0700 - test: add unit tests for authentication module

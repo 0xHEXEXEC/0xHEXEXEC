@@ -1,1 +1,1 @@
-2024-12-02-11 - ci: tune artifact retention policies on pipeline jobs
+2024-12-02-12 - refactor: decouple caching layer from state manager

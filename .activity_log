@@ -1,1 +1,1 @@
-2024-12-09 17:41:20 +0700 - chore: maintain repository assets and images
+2024-12-09 10:47:43 +0700 - fix: resolve memory leak in background worker

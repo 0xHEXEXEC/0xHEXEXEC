@@ -1,1 +1,1 @@
-2024-12-16 14:28:07 +0700 - style: fix padding on custom HTML tables
+2024-12-16 12:19:21 +0700 - sec: patch potential cross-site scripting vulnerability

@@ -1,1 +1,1 @@
-2024-12-17-1 - fix: handle null pointer exception in user service
+2024-12-17-2 - test: add integration test cases for push endpoint

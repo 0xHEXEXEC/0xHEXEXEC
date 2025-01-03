@@ -1,1 +1,1 @@
-2025-01-02-2 - feat: add oauth2 provider integration
+2025-01-03-1 - sec: sanitize payload inputs to prevent injection vectors

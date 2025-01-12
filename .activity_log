@@ -1,1 +1,1 @@
-2025-01-12 17:56:12 +0700 - feat: add new certification badges
+2025-01-12 12:41:21 +0700 - fix: resolve memory leak in background worker

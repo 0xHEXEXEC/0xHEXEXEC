@@ -1,1 +1,1 @@
-2025-02-07-8 - docs: update API authentication sequence diagram
+2025-02-07-9 - refactor: decouple caching layer from state manager

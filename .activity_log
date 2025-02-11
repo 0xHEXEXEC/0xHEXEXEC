@@ -1,1 +1,1 @@
-2025-02-11-7 - fix: resolve race condition in token refresh worker
+2025-02-11-8 - perf: optimize memory footprint on batch serialization

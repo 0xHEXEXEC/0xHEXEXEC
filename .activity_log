@@ -1,1 +1,1 @@
-2025-04-05-6 - feat: implement responsive grid breakpoints for dashboard
+2025-04-05-7 - fix: resolve race condition in token refresh worker

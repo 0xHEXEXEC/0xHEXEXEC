@@ -1,1 +1,1 @@
-2025-04-22 18:59:13 +0700 - sec: patch potential cross-site scripting vulnerability
+2025-04-21 16:14:43 +0700 - fix: resolve memory leak in background worker

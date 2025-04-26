@@ -1,1 +1,1 @@
-2025-04-26-14 - sec: sanitize payload inputs to prevent injection vectors
+2025-04-26-15 - fix: resolve race condition in token refresh worker

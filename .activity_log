@@ -1,1 +1,1 @@
-2025-05-14-8 - feat: implement responsive grid breakpoints for dashboard
+2025-05-14-9 - sec: sanitize payload inputs to prevent injection vectors

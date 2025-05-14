@@ -1,1 +1,1 @@
-2025-05-14-1 - docs: update API authentication sequence diagram
+2025-05-14-2 - fix: resolve race condition in token refresh worker

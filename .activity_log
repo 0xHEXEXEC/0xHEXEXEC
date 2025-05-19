@@ -1,1 +1,1 @@
-2025-05-18-17 - fix: handle null pointer exception in user service
+2025-05-19-1 - perf: optimize memory footprint on batch serialization

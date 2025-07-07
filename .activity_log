@@ -1,1 +1,1 @@
-2025-07-07-11 - feat: implement responsive grid breakpoints for dashboard
+2025-07-07-12 - perf: optimize memory footprint on batch serialization

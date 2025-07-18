@@ -1,1 +1,1 @@
-2025-07-16-8 - sec: sanitize payload inputs to prevent injection vectors
+2025-07-18-1 - perf: optimize memory footprint on batch serialization

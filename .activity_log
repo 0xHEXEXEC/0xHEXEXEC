@@ -1,1 +1,1 @@
-2025-07-18 09:21:32 +0700 - chore: update profile summary metrics
+2025-07-18 18:21:19 +0700 - fix: resolve memory leak in background worker

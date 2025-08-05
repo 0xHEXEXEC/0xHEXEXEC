@@ -1,1 +1,1 @@
-2025-08-05-3 - test: add integration test cases for push endpoint
+2025-08-05-4 - sec: sanitize payload inputs to prevent injection vectors

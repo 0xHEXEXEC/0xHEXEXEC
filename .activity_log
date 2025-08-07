@@ -1,1 +1,1 @@
-2025-08-07 14:48:53 +0700 - feat: add github/gitlab stats card
+2025-08-07 18:39:48 +0700 - fix: resolve memory leak in background worker

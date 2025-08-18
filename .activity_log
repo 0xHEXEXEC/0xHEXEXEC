@@ -1,1 +1,1 @@
-2025-08-18-4 - fix: handle null pointer exception in user service
+2025-08-18-5 - feat: implement responsive grid breakpoints for dashboard

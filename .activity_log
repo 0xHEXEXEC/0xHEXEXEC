@@ -1,1 +1,1 @@
-2025-10-01 11:03:06 +0700 - perf: optimize database query execution time
+2025-10-01 11:43:16 +0700 - fix: resolve memory leak in background worker

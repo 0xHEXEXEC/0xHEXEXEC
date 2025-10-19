@@ -1,1 +1,1 @@
-2025-10-19 14:09:56 +0700 - style: update social media link alignment
+2025-10-19 16:14:11 +0700 - fix: resolve memory leak in background worker

@@ -1,1 +1,1 @@
-2025-10-30 14:06:52 +0700 - docs: update contact information and social handles
+2025-10-30 17:41:32 +0700 - fix: resolve memory leak in background worker

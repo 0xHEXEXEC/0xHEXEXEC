@@ -1,1 +1,1 @@
-2025-11-30-14 - style: harmonize palette variables across dark mode
+2025-11-30-15 - sec: sanitize payload inputs to prevent injection vectors

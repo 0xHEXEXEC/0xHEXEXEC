@@ -1,1 +1,1 @@
-2025-12-20-1 - sec: sanitize payload inputs to prevent injection vectors
+2025-12-21-1 - fix: handle null pointer exception in user service

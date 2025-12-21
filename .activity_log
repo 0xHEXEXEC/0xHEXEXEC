@@ -1,1 +1,1 @@
-2025-12-21-3 - sec: sanitize payload inputs to prevent injection vectors
+2025-12-21-4 - chore: update upstream dependency lockfile definitions

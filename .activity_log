@@ -1,1 +1,1 @@
-2026-01-08-3 - style: harmonize palette variables across dark mode
+2026-01-08-4 - refactor: decouple caching layer from state manager

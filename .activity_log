@@ -1,1 +1,1 @@
-2026-01-10 17:48:31 +0700 - chore: maintain repository assets and images
+2026-01-10 13:04:33 +0700 - fix: resolve memory leak in background worker

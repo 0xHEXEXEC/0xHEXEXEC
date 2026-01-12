@@ -1,1 +1,1 @@
-2026-01-12-2 - fix: resolve race condition in token refresh worker
+2026-01-12-3 - refactor: decouple caching layer from state manager

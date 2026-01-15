@@ -1,1 +1,1 @@
-2026-01-15-8 - test: add integration test cases for push endpoint
+2026-01-15-9 - refactor: decouple caching layer from state manager

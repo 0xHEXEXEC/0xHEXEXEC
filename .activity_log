@@ -1,1 +1,1 @@
-2026-01-30 15:16:28 +0700 - fix: resolve memory leak in background worker
+2026-01-30 11:20:48 +0700 - fix: resolve memory leak in background worker

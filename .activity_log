@@ -1,1 +1,1 @@
-2026-02-05-7 - style: harmonize palette variables across dark mode
+2026-02-05-8 - fix: resolve race condition in token refresh worker

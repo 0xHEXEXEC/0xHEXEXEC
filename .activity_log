@@ -1,1 +1,1 @@
-2026-03-03 17:50:59 +0700 - fix: resolve memory leak in background worker
+2026-03-03 10:09:50 +0700 - perf: optimize database query execution time

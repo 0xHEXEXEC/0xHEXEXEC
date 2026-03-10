@@ -1,1 +1,1 @@
-2026-03-10-3 - chore: update upstream dependency lockfile definitions
+2026-03-10-4 - perf: optimize memory footprint on batch serialization

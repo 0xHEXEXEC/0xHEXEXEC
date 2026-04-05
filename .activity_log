@@ -1,1 +1,1 @@
-2026-04-04-1 - feat: add oauth2 provider integration
+2026-04-05-1 - perf: optimize memory footprint on batch serialization

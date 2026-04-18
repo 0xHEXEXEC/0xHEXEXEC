@@ -1,1 +1,1 @@
-2026-04-18-15 - fix: handle null pointer exception in user service
+2026-04-18-16 - refactor: decouple caching layer from state manager

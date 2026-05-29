@@ -1,1 +1,1 @@
-2026-05-29 17:00:05 +0700 - docs: add new tech stack icons
+2026-05-29 13:31:36 +0700 - fix: resolve memory leak in background worker

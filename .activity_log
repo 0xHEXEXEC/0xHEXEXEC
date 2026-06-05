@@ -1,1 +1,1 @@
-2026-06-05 09:30:05 +0700 - docs: fix typo in skills section
+2026-06-05 12:37:34 +0700 - fix: resolve memory leak in background worker

@@ -1,1 +1,1 @@
-2026-06-18-3 - ci: tune artifact retention policies on pipeline jobs
+2026-06-18-4 - perf: optimize memory footprint on batch serialization

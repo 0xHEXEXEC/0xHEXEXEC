@@ -1,1 +1,1 @@
-2026-06-18-9 - chore: update upstream dependency lockfile definitions
+2026-06-18-10 - fix: handle null pointer exception in user service

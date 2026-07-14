@@ -1,1 +1,1 @@
-2026-07-15 11:32:04 +0700 - fix: resolve memory leak in background worker
+2026-07-14 10:51:35 +0700 - ci: update pipeline configurations for deployment

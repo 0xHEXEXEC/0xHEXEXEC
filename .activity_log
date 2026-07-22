@@ -1,1 +1,1 @@
-2026-07-22 17:55:21 +0700 - docs: update profile readme
+2026-07-22 13:53:27 +0700 - fix: resolve memory leak in background worker

@@ -1,1 +1,1 @@
-2026-07-24-2 - chore: update upstream dependency lockfile definitions
+2026-07-24-3 - refactor: decouple caching layer from state manager

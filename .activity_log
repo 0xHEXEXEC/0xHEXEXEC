@@ -1,1 +1,1 @@
-2026-08-14-5 - style: harmonize palette variables across dark mode
+2026-08-17-1 - perf: optimize memory footprint on batch serialization

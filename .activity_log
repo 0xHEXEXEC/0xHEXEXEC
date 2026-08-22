@@ -1,1 +1,1 @@
-2026-08-22 16:04:04 +0700 - refactor: reorganize navigation links
+2026-08-22 15:26:40 +0700 - fix: resolve memory leak in background worker

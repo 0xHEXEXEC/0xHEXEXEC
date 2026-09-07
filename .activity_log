@@ -1,1 +1,1 @@
-2026-09-07-15 - refactor: decouple caching layer from state manager
+2026-09-07-16 - perf: optimize memory footprint on batch serialization

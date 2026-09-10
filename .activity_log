@@ -1,1 +1,1 @@
-2026-09-10 12:30:44 +0700 - fix: resolve memory leak in background worker
+2026-09-10 09:59:44 +0700 - sec: patch potential cross-site scripting vulnerability

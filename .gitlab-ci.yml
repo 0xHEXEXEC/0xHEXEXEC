@@ -9,6 +9,9 @@ daily_commit_and_sync:
     - cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
   script:
     - |
+      bash << 'EOF'
+      set -e
+
       git config --global user.name "0xHEXEXEC"
       git config --global user.email "james.dynamicdev@gmail.com"
 
@@ -52,14 +55,11 @@ daily_commit_and_sync:
         commit_msg="${messages[$msg_idx]}"
 
         payload_hash=$(echo -n "${formatted_date}-${i}-${commit_msg}" | sha256sum | awk '{print $1}')
-        cat <<EOF > .activity_log
-      timestamp: ${formatted_date}
-      sequence: ${i}/${total_commits}
-      message: ${commit_msg}
-      hash: ${payload_hash}
-      EOF
-        git add .activity_log
+        
+        printf "timestamp: %s\nsequence: %d/%d\nmessage: %s\nhash: %s\n" \
+          "$formatted_date" "$i" "$total_commits" "$commit_msg" "$payload_hash" > .activity_log
 
+        git add .activity_log
         GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}" > /dev/null 2>&1
       done
 
@@ -67,8 +67,9 @@ daily_commit_and_sync:
       git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
 
       echo "Pushing commits to GitHub..."
-      git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
+      git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git" || git remote set-url github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
       git push github HEAD:main
+      EOF
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"

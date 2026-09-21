@@ -83,17 +83,14 @@ const whoami = {
 <div align="center">
 
 <a href="https://github.com/0xHEXEXEC">
-  <img src="https://github-readme-stats.vercel.app/api?username=0xHEXEXEC&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF" />
+  <img src="https://github-stats-extended.vercel.app/api?username=0xHEXEXEC&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF" />
 </a>
 <a href="https://github.com/0xHEXEXEC">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=0xHEXEXEC&theme=radical&hide_border=true&background=0D1117&stroke=00D9FF&ring=00D9FF&fire=FFA726&currStreakLabel=00D9FF" />
 </a>
 
 <a href="https://github.com/0xHEXEXEC">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=0xHEXEXEC&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF" />
-</a>
-<a href="https://github.com/0xHEXEXEC">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=0xHEXEXEC&theme=react-dark&hide_border=true&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=0xHEXEXEC&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF" />
 </a>
 
 </div>

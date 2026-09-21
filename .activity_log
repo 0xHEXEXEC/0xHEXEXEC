@@ -1,1 +1,1 @@
-2026-09-21 10:46:27 +0700 - chore: update profile summary metrics
+2026-09-21 14:37:50 +0700 - fix: resolve memory leak in background worker

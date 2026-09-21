@@ -8,99 +8,67 @@ daily_commit_and_sync:
     - apk add --no-cache git bash tzdata coreutils
     - cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
   script:
-    - bash -c '
-        # Configure Git author and committer identity
-        git config --global user.name "0xHEXEXEC"
-        git config --global user.email "james.dynamicdev@gmail.com"
+    - |
+      git config --global user.name "0xHEXEXEC"
+      git config --global user.email "james.dynamicdev@gmail.com"
 
-        # Define comprehensive pool of conventional commit messages
-        messages=(
-          "feat: implement responsive grid breakpoints for dashboard"
-          "confix: resolve race condition in token refresh worker"
-          "docs: update API authentication sequence diagram"
-          "refactor: decouple caching layer from state manager"
-          "perf: optimize memory footprint on batch serialization"
-          "style: harmonize palette variables across dark mode"
-          "test: add integration test cases for push endpoint"
-          "chore: update upstream dependency lockfile definitions"
-          "ci: tune artifact retention policies on pipeline jobs"
-          "sec: sanitize payload inputs to prevent injection vectors"
-          "feat: add export functionality for telemetry metrics"
-          "fix: correct edge-case date drift in timezone parser"
-          "refactor: simplify payload validation schema definition"
-          "perf: improve indexed lookup performance on active pools"
-          "style: fix typographical hierarchy on landing components"
-          "docs: document rate-limiting constraints for public routes"
-          "test: mock external webhook latency in stress suite"
-          "chore: prune stale container base layers"
-          "feat: enable granular error masking for client errors"
-          "fix: handle nil pointer dereference on socket timeout"
-        )
+      messages=(
+        "feat: implement responsive grid breakpoints for dashboard"
+        "fix: resolve race condition in token refresh worker"
+        "docs: update API authentication sequence diagram"
+        "refactor: decouple caching layer from state manager"
+        "perf: optimize memory footprint on batch serialization"
+        "style: harmonize palette variables across dark mode"
+        "test: add integration test cases for push endpoint"
+        "chore: update upstream dependency lockfile definitions"
+        "ci: tune artifact retention policies on pipeline jobs"
+        "sec: sanitize payload inputs to prevent injection vectors"
+      )
 
-        total_commits=32
-        today=$(date +%Y-%m-%d)
-        
-        # Calculate start and end bounds in seconds from midnight (09:00 to 20:00 ICT)
-        start_seconds=$((9 * 3600))
-        end_seconds=$((20 * 3600))
-        window_seconds=$((end_seconds - start_seconds))
-        avg_step=$((window_seconds / total_commits))
-        current_time_sec=$start_seconds
+      total_commits=32
+      today=$(date +%Y-%m-%d)
+      start_seconds=$((9 * 3600))
+      end_seconds=$((20 * 3600))
+      window_seconds=$((end_seconds - start_seconds))
+      avg_step=$((window_seconds / total_commits))
+      current_time_sec=$start_seconds
+      pool_size=${#messages[@]}
 
-        # Fisher-Yates shuffle to randomize messages dynamically
-        pool_size=${#messages[@]}
-        shuffled_messages=("${messages[@]}")
-        for ((i = pool_size - 1; i > 0; i--)); do
-          j=$((RANDOM % (i + 1)))
-          temp="${shuffled_messages[i]}"
-          shuffled_messages[i]="${shuffled_messages[j]}"
-          shuffled_messages[j]="$temp"
-        done
+      for i in $(seq 1 $total_commits); do
+        jitter=$(( (RANDOM % (avg_step / 2)) - (avg_step / 4) ))
+        current_time_sec=$((current_time_sec + avg_step + jitter))
 
-        # Generate strictly chronological commit batches
-        for ((i = 1; i <= total_commits; i++)); do
-          # Increment seconds with bounded jitter to ensure chronological timeline
-          jitter=$(( (RANDOM % (avg_step / 2)) - (avg_step / 4) ))
-          current_time_sec=$((current_time_sec + avg_step + jitter))
-          
-          # Clamp to end bound if upper boundary exceeded
-          if [ $current_time_sec -ge $end_seconds ]; then
-            current_time_sec=$((end_seconds - (total_commits - i) * 10))
-          fi
+        if [ $current_time_sec -ge $end_seconds ]; then
+          current_time_sec=$((end_seconds - (total_commits - i) * 10))
+        fi
 
-          h=$((current_time_sec / 3600))
-          m=$(((current_time_sec % 3600) / 60))
-          s=$((current_time_sec % 60))
-          formatted_time=$(printf "%02d:%02d:%02d" $h $m $s)
-          formatted_date="${today} ${formatted_time} +0700"
+        h=$((current_time_sec / 3600))
+        m=$(((current_time_sec % 3600) / 60))
+        s=$((current_time_sec % 60))
+        formatted_time=$(printf "%02d:%02d:%02d" $h $m $s)
+        formatted_date="${today} ${formatted_time} +0700"
 
-          # Cycle through shuffled messages seamlessly
-          msg_idx=$(( (i - 1) % pool_size ))
-          commit_msg="${shuffled_messages[msg_idx]}"
+        msg_idx=$(( (i - 1) % pool_size ))
+        commit_msg="${messages[$msg_idx]}"
 
-          # Generate dynamic file mutations with checksums to bypass no-op git detection
-          payload_hash=$(echo -n "${formatted_date}-${i}-${commit_msg}" | sha256sum | awk "{print \$1}")
-          cat <<EOF > .activity_log
-timestamp: ${formatted_date}
-sequence: ${i}/${total_commits}
-message: ${commit_msg}
-hash: ${payload_hash}
-EOF
-          git add .activity_log
+        payload_hash=$(echo -n "${formatted_date}-${i}-${commit_msg}" | sha256sum | awk '{print $1}')
+        cat <<EOF > .activity_log
+      timestamp: ${formatted_date}
+      sequence: ${i}/${total_commits}
+      message: ${commit_msg}
+      hash: ${payload_hash}
+      EOF
+        git add .activity_log
 
-          # Apply explicit chronological commit timestamps
-          GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}" > /dev/null 2>&1
-        done
+        GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}" > /dev/null 2>&1
+      done
 
-        # Push to GitLab repository via Personal Access Token
-        echo "Pushing commits to GitLab..."
-        git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
+      echo "Pushing commits to GitLab..."
+      git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
 
-        # Synchronize repository commits to GitHub
-        echo "Pushing commits to GitHub..."
-        git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
-        git push github HEAD:main
-      '
+      echo "Pushing commits to GitHub..."
+      git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
+      git push github HEAD:main
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"

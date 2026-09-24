@@ -1,1 +1,1 @@
-2026-09-23-9 - style: harmonize palette variables across dark mode
+2026-09-24-1 - fix: handle null pointer exception in user service

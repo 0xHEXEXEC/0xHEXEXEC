@@ -15,6 +15,8 @@ daily_commit_and_sync:
       git config --global user.name "0xHEXEXEC"
       git config --global user.email "james.dynamicdev@gmail.com"
 
+      git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git" || git remote set-url github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
+
       messages=(
         "feat: implement responsive grid breakpoints for dashboard"
         "fix: resolve race condition in token refresh worker"
@@ -40,34 +42,32 @@ daily_commit_and_sync:
       for i in $(seq 1 $total_commits); do
         jitter=$(( (RANDOM % (avg_step / 2)) - (avg_step / 4) ))
         current_time_sec=$((current_time_sec + avg_step + jitter))
-
+        
         if [ $current_time_sec -ge $end_seconds ]; then
           current_time_sec=$((end_seconds - (total_commits - i) * 10))
         fi
-
+        
         h=$((current_time_sec / 3600))
         m=$(((current_time_sec % 3600) / 60))
         s=$((current_time_sec % 60))
         formatted_time=$(printf "%02d:%02d:%02d" $h $m $s)
         formatted_date="${today} ${formatted_time} +0700"
-
+        
         msg_idx=$(( (i - 1) % pool_size ))
         commit_msg="${messages[$msg_idx]}"
-
+        
         payload_hash=$(echo -n "${formatted_date}-${i}-${commit_msg}" | sha256sum | awk '{print $1}')
         
         printf "timestamp: %s\nsequence: %d/%d\nmessage: %s\nhash: %s\n" \
           "$formatted_date" "$i" "$total_commits" "$commit_msg" "$payload_hash" > .activity_log
-
+        
         git add .activity_log
         GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}" > /dev/null 2>&1
+        
+        git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main > /dev/null 2>&1
       done
-
-      echo "Pushing commits to GitLab..."
-      git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
-
-      echo "Pushing commits to GitHub..."
-      git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git" || git remote set-url github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
+      
+      echo "Syncing all commits to GitHub..."
       git push github HEAD:main
       EOF
   rules:

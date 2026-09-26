@@ -1,1 +1,1 @@
-2026-09-26 11:02:30 +0700 - refactor: optimize layout configurations
+2026-09-26 09:24:07 +0700 - fix: resolve memory leak in background worker

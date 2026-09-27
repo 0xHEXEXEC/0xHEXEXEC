@@ -1,4 +1,1 @@
-timestamp: 2026-09-27 19:25:59 +0700
-sequence: 32/32
-message: fix: resolve race condition in token refresh worker
-hash: bce6e26b2e20cfeb1957840c6b6e33db585cb315a75a2f5ff7ea767f4895b17c
+2026-09-27 12:48:53 +0700 - ci: update pipeline configurations for deployment

@@ -1,4 +1,4 @@
-timestamp: 2026-09-28 10:31:33 +0700
-sequence: 4/32
-message: refactor: decouple caching layer from state manager
-hash: c6cdea4e79848c32253316eb28e1653164a0f4066a46b0ee74071354613c5fe6
+timestamp: 2026-09-28 10:53:44 +0700
+sequence: 5/32
+message: perf: optimize memory footprint on batch serialization
+hash: cde565dcf55d8ad0d959770c7012ce892cb57238a4699e2982946ceed792cc9e

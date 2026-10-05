@@ -1,4 +1,4 @@
-timestamp: 2026-10-05 18:36:19 +0700
-sequence: 28/32
-message: chore: update upstream dependency lockfile definitions
-hash: ce083be26b4b15faa68e1bf8d1e38e7c88c58796e3ef76103a9ad15ebc8b4cd5
+timestamp: 2026-10-05 19:00:07 +0700
+sequence: 29/32
+message: ci: tune artifact retention policies on pipeline jobs
+hash: c2c042789996a2f78b86102bdd9e7a4d105ef00dbcc2577c6ef60221c0324886

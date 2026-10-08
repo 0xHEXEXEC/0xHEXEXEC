@@ -1,1 +1,1 @@
-2026-10-05-14 - fix: resolve race condition in token refresh worker
+2026-10-08-1 - fix: handle null pointer exception in user service

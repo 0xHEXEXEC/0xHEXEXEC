@@ -1,4 +1,4 @@
-timestamp: 2026-10-09 12:42:40 +0700
-sequence: 11/32
-message: feat: implement responsive grid breakpoints for dashboard
-hash: a96484816fde19976968336695645af19c2b19d1155ed782d617db240eda946b
+timestamp: 2026-10-09 13:03:28 +0700
+sequence: 12/32
+message: fix: resolve race condition in token refresh worker
+hash: 8b7e11842686542f3486b3b5775e7ab3404398f4ba7a3067793d310859ff547d

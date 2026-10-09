@@ -1,4 +1,4 @@
-timestamp: 2026-10-09 12:57:49 +0700
-sequence: 12/32
-message: fix: resolve race condition in token refresh worker
-hash: 416e24459c33e4151b042e4f932b7d1cd1222144780e03fa281b7e990ee62f95
+timestamp: 2026-10-09 13:20:29 +0700
+sequence: 13/32
+message: docs: update API authentication sequence diagram
+hash: 6f8ce5ca47f094f37e154dc2f68db2329811c60774730e7b60e96c11eb28afec

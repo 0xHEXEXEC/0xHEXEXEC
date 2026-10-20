@@ -1,4 +1,4 @@
-timestamp: 2026-10-20 17:47:00 +0700
-sequence: 25/32
-message: perf: optimize memory footprint on batch serialization
-hash: 459f8e8de5b822ad165659fd8fe854caf55ee39f6028190d6cda48d1c5eeac4e
+timestamp: 2026-10-20 18:11:33 +0700
+sequence: 26/32
+message: style: harmonize palette variables across dark mode
+hash: 841fc1e8c28f783ea60b4e3e76b0374102047a1b1666447e3d601df58161d04f

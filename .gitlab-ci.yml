@@ -10,7 +10,7 @@ daily_commit_and_sync:
   script:
     - |
       bash << 'EOF'
-      set -e
+      set -ex
 
       git config --global user.name "0xHEXEXEC"
       git config --global user.email "james.dynamicdev@gmail.com"
@@ -62,9 +62,9 @@ daily_commit_and_sync:
           "$formatted_date" "$i" "$total_commits" "$commit_msg" "$payload_hash" > .activity_log
         
         git add .activity_log
-        GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}" > /dev/null 2>&1
+        GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}"
         
-        git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main > /dev/null 2>&1
+        git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
       done
       
       echo "Syncing all commits to GitHub..."

@@ -1,6 +1,9 @@
 stages:
   - auto_commit
 
+variables:
+  GIT_DEPTH: "0"  # บังคับดึง Commit ทั้งหมด ไม่ทำ Shallow clone เพื่อไม่ให้ GitHub หา Object ไม่เจอ
+
 daily_commit_and_sync:
   stage: auto_commit
   image: alpine:latest
@@ -14,6 +17,9 @@ daily_commit_and_sync:
 
       git config --global user.name "0xHEXEXEC"
       git config --global user.email "james.dynamicdev@gmail.com"
+
+      # เผื่อ Runner ยังติด shallow ให้ดึงประวัติเต็มกลับมา
+      git fetch --unshallow origin || true
 
       git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git" || git remote set-url github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
 

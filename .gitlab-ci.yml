@@ -68,7 +68,7 @@ daily_commit_and_sync:
       done
       
       echo "Syncing all commits to GitHub..."
-      git push github HEAD:main
+      git push github HEAD:main --force
       EOF
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"

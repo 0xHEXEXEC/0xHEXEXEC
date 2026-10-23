@@ -2,7 +2,7 @@ stages:
   - auto_commit
 
 variables:
-  GIT_DEPTH: "0"  # บังคับดึง Commit ทั้งหมด ไม่ทำ Shallow clone เพื่อไม่ให้ GitHub หา Object ไม่เจอ
+  GIT_DEPTH: "0"
 
 daily_commit_and_sync:
   stage: auto_commit
@@ -18,7 +18,6 @@ daily_commit_and_sync:
       git config --global user.name "0xHEXEXEC"
       git config --global user.email "james.dynamicdev@gmail.com"
 
-      # เผื่อ Runner ยังติด shallow ให้ดึงประวัติเต็มกลับมา
       git fetch --unshallow origin || true
 
       git remote add github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git" || git remote set-url github "https://${GITHUB_TOKEN}@github.com/0xHEXEXEC/0xHEXEXEC.git"
@@ -69,11 +68,9 @@ daily_commit_and_sync:
         
         git add .activity_log
         GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}"
-        
-        git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
       done
       
-      echo "Syncing all commits to GitHub..."
+      git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main
       git push github HEAD:main --force
       EOF
   rules:

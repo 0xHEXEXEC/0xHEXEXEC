@@ -15,7 +15,6 @@ daily_commit_and_sync:
       bash << 'EOF'
       set -e
 
-      # 15% Holiday
       if [ $((RANDOM % 100)) -lt 15 ]; then
         echo "Taking a break today. No commits generated."
         exit 0
@@ -41,7 +40,6 @@ daily_commit_and_sync:
         "sec: sanitize payload inputs to prevent injection vectors"
       )
 
-      #  GitLab 27-32 add dir
       total_commits=$(( (RANDOM % 6) + 27 ))
       today=$(date +%Y-%m-%d)
       
@@ -53,7 +51,7 @@ daily_commit_and_sync:
       current_time_sec=$start_seconds
       pool_size=${#messages[@]}
 
-      echo "Generating $total_commits commits for today ($today) to trick GitLab color scale..."
+      echo "Generating and pushing $total_commits distinct contributions to GitLab..."
 
       for i in $(seq 1 $total_commits); do
         jitter=$(( (RANDOM % (avg_step / 2)) - (avg_step / 4) ))
@@ -79,10 +77,11 @@ daily_commit_and_sync:
         
         git add .activity_log
         GIT_AUTHOR_DATE="${formatted_date}" GIT_COMMITTER_DATE="${formatted_date}" git commit -m "${commit_msg}" > /dev/null 2>&1
+        
+        git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main > /dev/null 2>&1
       done
       
-      echo "Syncing $total_commits commits..."
-      git push "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${CI_PROJECT_PATH}.git" HEAD:main > /dev/null 2>&1
+      echo "Syncing all commits to GitHub..."
       git push github HEAD:main
       EOF
   rules:

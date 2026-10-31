@@ -1,4 +1,4 @@
-timestamp: 2026-10-31 17:12:32 +0700
-sequence: 23/31
-message: docs: update API authentication sequence diagram
-hash: 8cfbbbfbd16d25b2fb9ceed5b7338ac5fbe96ab02f4928c48de15ef451da2406
+timestamp: 2026-10-31 17:32:05 +0700
+sequence: 24/31
+message: refactor: decouple caching layer from state manager
+hash: 2398020ed05d4642d07577c40eccae6d511b1ddf958b15acc8f56d3dde2e8412

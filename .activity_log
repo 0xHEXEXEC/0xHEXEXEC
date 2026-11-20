@@ -1,4 +1,4 @@
-timestamp: 2026-11-20 16:12:54 +0700
-sequence: 19/29
-message: ci: tune artifact retention policies on pipeline jobs
-hash: 093cad4e62bacb4c36819c4c3edc3e7ebe0f856958ea85fa244755cbffdf11d7
+timestamp: 2026-11-20 16:34:18 +0700
+sequence: 20/29
+message: sec: sanitize payload inputs to prevent injection vectors
+hash: 4dc07337998f3a57d5de4de97ec0dd8667646bb2b7178f448e6e27bb08e4110b

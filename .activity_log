@@ -1,4 +1,4 @@
-timestamp: 2026-11-22 15:21:18 +0700
-sequence: 16/28
-message: style: harmonize palette variables across dark mode
-hash: 8a2fa9f36712b1bcf0ac4370dff73a3cc2bd9637ac86627f6c08854f5c034805
+timestamp: 2026-11-22 15:44:28 +0700
+sequence: 17/28
+message: test: add integration test cases for push endpoint
+hash: c20add7abe86b5b53838406eaa237508a213a18cd6fcb8eb81f50032e738f22d
